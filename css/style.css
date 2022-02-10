@@ -1,0 +1,131 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.app {
+  height: 100vh;
+  /*ビューポートサイズに対する割合*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /*要素横並び*/
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  /*要素を均等に振り分ける*/
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+video {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
+  background-color: #66B98F;
+}
+
+.time-select,
+.sound-picker,
+.player-container {
+  height: 80%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  /*要素を均等に配分*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /*要素を縦に*/
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.player-container {
+  position: relative;
+}
+
+.player-container svg {
+  position: absolute;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(-90deg);
+          transform: translate(-50%, -50%) rotate(-90deg);
+  /*アニメーションの開始位置を調整*/
+  pointer-events: none;
+  /*svgファイルのhover時のイベントを削除*/
+}
+
+.time-display {
+  position: absolute;
+  bottom: 10%;
+  color: white;
+  font-size: 50px;
+}
+
+.sound-picker button,
+.time-select button {
+  color: white;
+  width: 30%;
+  height: 10%;
+  background: none;
+  border: 2px solid white;
+  cursor: pointer;
+  /*要素にカーソルがある場合*/
+  border-radius: 5px;
+  font-size: 20px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  /*下記に説明を記述*/
+}
+
+/*
+*transition・・・アニメーション設定
+*all・・・どのプロパティにアニメーションを適用するか
+*0.5・・・アニメーションの時間
+*ease・・・変化の進行度合いeaseがデフォルト
+*/
+.time-select button:hover {
+  color: black;
+  background-color: white;
+  opacity: 0.8;
+}
+
+.sound-picker button {
+  border: none;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  padding: 30px;
+}
+
+.sound-picker button:nth-child(1) {
+  /*擬似クラス、親要素から見てn番目のみ適用する*/
+  background-color: #4972a1;
+}
+
+.sound-picker button:nth-child(2) {
+  background-color: #a14f49;
+}
+
+.sound-picker button img {
+  /*buttonに収まるようにimgに制限をかける*/
+  height: 100%;
+}
+/*# sourceMappingURL=style.css.map */
